@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--logging:-->
+<!--pattern:-->
+<!--#    控制台输出格式-->
+<!--console: "%d - %msg%n"-->
+<!--#    将日志输出到文件，固定格式，不是控制台的输出格式-->
+<!--file: C:\Users\ouyang\Desktop\wechat_shop\spring.log-->
+<!--level:-->
+<!--#    指定一个类的日志级别-->
+<!--com.oy.shop.sell.LoggerTest2: debug-->
+<configuration>
+    <!--指定控制台输出格式-->
+    <appender name="consoleLog" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>
+                %d - %msg%n
+            </pattern>
+        </layout>
+    </appender>
+    <!--指定fileInfoLog文件输出位置-->
+    <!--<appender name="fileInfoLog" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+        <!--<encoder>-->
+            <!--<pattern>-->
+                <!--%msg%n-->
+            <!--</pattern>-->
+        <!--</encoder>-->
+        <!--&lt;!&ndash;滚动策略 按照时间来滚动的&ndash;&gt;-->
+        <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+            <!--&lt;!&ndash;路径&ndash;&gt;-->
+            <!--<fileNamePattern>-->
+                <!--C:\Users\ouyang\Desktop\wechat_shop\info.%d.log-->
+            <!--</fileNamePattern>-->
+        <!--</rollingPolicy>-->
+    <!--</appender>-->
+
+    <!--指定fileErrorLog文件输出位置-->
+    <!--<appender name="fileErrorLog" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+        <!--&lt;!&ndash;只拦截ERROR级别的日志&ndash;&gt;-->
+        <!--<filter class="ch.qos.logback.classic.filter.ThresholdFilter">-->
+            <!--<level>-->
+                <!--ERROR-->
+            <!--</level>-->
+        <!--</filter>-->
+        <!--<encoder>-->
+            <!--<pattern>-->
+                <!--%msg%n-->
+            <!--</pattern>-->
+        <!--</encoder>-->
+        <!--&lt;!&ndash;滚动策略 按照时间来滚动的&ndash;&gt;-->
+        <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+            <!--&lt;!&ndash;路径&ndash;&gt;-->
+            <!--<fileNamePattern>-->
+                <!--C:\Users\ouyang\Desktop\wechat_shop\error.%d.log-->
+            <!--</fileNamePattern>-->
+        <!--</rollingPolicy>-->
+    <!--</appender>-->
+
+    <!--指定fileErrorLog文件输出位置-->
+    <!--<appender name="fileDebugLog" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+        <!--&lt;!&ndash;拦截DEBUG以及以上级别的日志&ndash;&gt;-->
+        <!--<filter class="ch.qos.logback.classic.filter.LevelFilter">-->
+            <!--<level>-->
+                <!--debug-->
+            <!--</level>-->
+        <!--</filter>-->
+        <!--<encoder>-->
+            <!--<pattern>-->
+                <!--%msg%n-->
+            <!--</pattern>-->
+        <!--</encoder>-->
+        <!--&lt;!&ndash;滚动策略 按照时间来滚动的&ndash;&gt;-->
+        <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+            <!--&lt;!&ndash;路径&ndash;&gt;-->
+            <!--<fileNamePattern>-->
+                <!--C:\Users\ouyang\Desktop\wechat_shop\debug.%d.log-->
+            <!--</fileNamePattern>-->
+        <!--</rollingPolicy>-->
+    <!--</appender>-->
+
+    <!--指定在root的info级别下使用这个配置-->
+    <root level="info">
+        <appender-ref ref="consoleLog"/>
+        <!--<appender-ref ref="fileInfoLog"/>-->
+        <!--<appender-ref ref="fileErrorLog"/>-->
+        <!--<appender-ref ref="fileDebugLog"/>-->
+    </root>
+</configuration>
